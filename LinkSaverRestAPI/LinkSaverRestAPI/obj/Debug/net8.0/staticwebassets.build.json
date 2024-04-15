@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "I07LiwVXQobFK8krJOlSnvo9l5dE/7+9pcHS1veDjFs=",
+  "Source": "LinkSaverRestAPI",
+  "BasePath": "_content/LinkSaverRestAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
