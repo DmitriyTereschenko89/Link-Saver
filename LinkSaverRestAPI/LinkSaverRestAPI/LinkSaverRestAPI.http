@@ -1,6 +1,0 @@
-@LinkSaverRestAPI_HostAddress = http://localhost:5258
-
-GET {{LinkSaverRestAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
