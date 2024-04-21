@@ -17,6 +17,7 @@ namespace linksaver.data.Repositories
 
         public async Task SaveModel(LinkModel model)
         {
+            model.Id = Guid.NewGuid();
             _postgreSqlContext.Links.Add(model);
             await _postgreSqlContext.SaveChangesAsync();
         }
