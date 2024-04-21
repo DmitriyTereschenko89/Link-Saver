@@ -2,6 +2,6 @@
 {
     public interface IEncodeService
     {
-        string EncodeUrl(string url);
+        Task<string> EncodeUrl(string url);
     }
 }

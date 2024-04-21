@@ -4,7 +4,7 @@ namespace linksaver.data.Repositories
 {
     public interface IRepository
 	{
-        LinkModel GetModel(Guid id);
-        LinkModel GetModel(string url);
+        Task<LinkModel> GetModel(string url);
+        Task SaveModel(LinkModel model);
 	}
 }

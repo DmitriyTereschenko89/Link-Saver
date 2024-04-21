@@ -1,10 +1,12 @@
 ﻿namespace linksaver.domain.Services
 {
-    public class EncodeService : IEncodeService
+    public class EncodeService(ILinkGeneratorService linkGeneratorService) : IEncodeService
     {
-        public string EncodeUrl(string url)
+        private readonly ILinkGeneratorService _linkGeneratorService = linkGeneratorService;
+
+        public async Task<string> EncodeUrl(string url)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() => _linkGeneratorService.GenerateUrl(url));
         }
     }
 }
