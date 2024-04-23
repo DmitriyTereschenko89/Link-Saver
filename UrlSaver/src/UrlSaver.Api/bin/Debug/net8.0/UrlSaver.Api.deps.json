@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "UrlSaver.Api/1.0.0": {
+        "runtime": {
+          "UrlSaver.Api.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UrlSaver.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
