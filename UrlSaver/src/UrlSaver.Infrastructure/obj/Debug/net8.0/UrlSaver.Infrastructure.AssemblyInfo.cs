@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrlSaver.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+371ba4fbbd0c74ba100d6b9b5d564f979eae6c48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7e8b47ac0c143a35d1767a09447ff93054e9921")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrlSaver.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrlSaver.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

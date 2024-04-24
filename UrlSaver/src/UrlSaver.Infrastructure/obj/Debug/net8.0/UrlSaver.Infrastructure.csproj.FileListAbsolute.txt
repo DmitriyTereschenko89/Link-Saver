@@ -1,0 +1,16 @@
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Infrastructure.deps.json
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Infrastructure.dll
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Infrastructure.pdb
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Domain.dll
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Domain.pdb
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.csproj.AssemblyReference.cache
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.AssemblyInfoInputs.cache
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.AssemblyInfo.cs
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.sourcelink.json
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.4AFC583D.Up2Date
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.dll
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\refint\UrlSaver.Infrastructure.dll
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.pdb
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\ref\UrlSaver.Infrastructure.dll
