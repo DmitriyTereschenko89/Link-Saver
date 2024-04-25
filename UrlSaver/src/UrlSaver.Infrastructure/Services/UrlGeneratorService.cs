@@ -1,46 +1,47 @@
-﻿using UrlSaver.Domain.Common;
+﻿using System.Configuration;
+
+using UrlSaver.Domain.Common;
 
 namespace UrlSaver.Infrastructure.Services
 {
     public class UrlGeneratorService : IUrlGeneratorService
     {
-        private const string Base58Code = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-        private const int MaxLengthShortUrl = 7;
-        private const int Base58MaxCodeLength = 58;
-
         public string GenerateUrl(string originalUrl)
         {
+            string codingSequence = ConfigurationManager.AppSettings["CodingSequence"];
+            int urlMaxLength = int.Parse(ConfigurationManager.AppSettings["UrlMaxLength"]);
+            int codingSequenceLength = codingSequence.Length;
             uint urlHash = (uint)originalUrl.GetHashCode();
             List<int> charCodes = [];
             Random rnd = new();
             while (urlHash != 0)
             {
-                charCodes.Add((int)(urlHash % Base58MaxCodeLength));
-                urlHash /= Base58MaxCodeLength;
+                charCodes.Add((int)(urlHash % codingSequenceLength));
+                urlHash /= (uint)codingSequenceLength;
             }
-            while (charCodes.Count < MaxLengthShortUrl)
+            while (charCodes.Count < urlMaxLength)
             {
-                charCodes.Add(rnd.Next() % Base58MaxCodeLength);
+                charCodes.Add(rnd.Next() % codingSequenceLength);
             }
-            int differenceLength = MaxLengthShortUrl - charCodes.Count;
+            int differenceLength = urlMaxLength - charCodes.Count;
             for (int count = 0; count < differenceLength; ++count)
             {
-                int index = rnd.Next() % MaxLengthShortUrl;
-                if (index < Base58MaxCodeLength - 1)
+                int index = rnd.Next() % urlMaxLength;
+                if (index < codingSequenceLength - 1)
                 {
                     charCodes[index] += charCodes[index + 1];
                 }
                 else
                 {
-                    charCodes[index % MaxLengthShortUrl] += charCodes[index % (MaxLengthShortUrl - 1)];
+                    charCodes[index % urlMaxLength] += charCodes[index % (urlMaxLength- 1)];
                 }
-                charCodes[index] %= Base58MaxCodeLength;
+                charCodes[index] %= codingSequenceLength;
             }
-            charCodes = charCodes[..MaxLengthShortUrl];
+            charCodes = charCodes[..urlMaxLength];
             List<char> shortUrlList = [];
             foreach (int code in charCodes)
             {
-                shortUrlList.Add(Base58Code[code]);
+                shortUrlList.Add(codingSequence[code]);
             }
             shortUrlList = [.. shortUrlList.OrderBy(x => rnd.Next())];
             return string.Join("", shortUrlList);

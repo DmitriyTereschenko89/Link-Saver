@@ -14,3 +14,4 @@ D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debu
 D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\refint\UrlSaver.Infrastructure.dll
 D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\UrlSaver.Infrastructure.pdb
 D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\obj\Debug\net8.0\ref\UrlSaver.Infrastructure.dll
+D:\Programming\Projects\link-saver\UrlSaver\src\UrlSaver.Infrastructure\bin\Debug\net8.0\UrlSaver.Infrastructure.dll.config

@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\urlsaver.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\urlsaver.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\entities\\urlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\entities\\urlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\common\\iurlgeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,36 +15,36 @@
       "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\services\\urlgeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\services\\encodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\services\\encodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\identity\\urlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\identity\\urlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\identity\\mssqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\identity\\mssqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\identity\\urldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\identity\\urldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\identity\\msdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\identity\\msdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\common\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\common\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\entities\\urlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\entities\\urlmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDD747FF-895F-4790-B05F-65F6E9C6245C}|src\\UrlSaver.Api\\UrlSaver.Api.csproj|solutionrelative:src\\urlsaver.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\common\\iencodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\common\\iencodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\common\\imssqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\common\\imssqlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.domain\\common\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB2DBF10-DD30-417B-B7C2-44B34B810B12}|src\\UrlSaver.Domain\\UrlSaver.Domain.csproj|solutionrelative:src\\urlsaver.domain\\common\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|d:\\programming\\projects\\link-saver\\urlsaver\\src\\urlsaver.infrastructure\\services\\encodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BB395DF-49DD-42CF-9EF2-47DC7864C13F}|src\\UrlSaver.Infrastructure\\UrlSaver.Infrastructure.csproj|solutionrelative:src\\urlsaver.infrastructure\\services\\encodeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 340,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,6 +63,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UrlDbContext.cs",
+              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\UrlDbContext.cs",
+              "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Identity\\UrlDbContext.cs",
+              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\UrlDbContext.cs",
+              "RelativeToolTip": "src\\UrlSaver.Infrastructure\\Identity\\UrlDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T10:56:56.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\App.config",
+              "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\App.config",
+              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\App.config",
+              "RelativeToolTip": "src\\UrlSaver.Infrastructure\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-25T07:43:33.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\UrlSaver.Api\\Program.cs",
+              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Program.cs",
+              "RelativeToolTip": "src\\UrlSaver.Api\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T07:37:11.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -86,59 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Api\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "src\\UrlSaver.Api\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-24T11:36:12.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UrlSaver.Api.http",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\UrlSaver.Api.http",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Api\\UrlSaver.Api.http",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\UrlSaver.Api.http",
-              "RelativeToolTip": "src\\UrlSaver.Api\\UrlSaver.Api.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-04-24T11:36:04.793Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MSDbContext.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\MSDbContext.cs",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Identity\\MSDbContext.cs",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\MSDbContext.cs",
-              "RelativeToolTip": "src\\UrlSaver.Infrastructure\\Identity\\MSDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T11:32:59.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Api\\appsettings.Development.json",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\appsettings.Development.json",
-              "RelativeToolTip": "src\\UrlSaver.Api\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-24T11:22:17.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\appsettings.json",
               "RelativeDocumentMoniker": "src\\UrlSaver.Api\\appsettings.json",
@@ -151,59 +126,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IMSSqlRepository.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IMSSqlRepository.cs",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Domain\\Common\\IMSSqlRepository.cs",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IMSSqlRepository.cs",
-              "RelativeToolTip": "src\\UrlSaver.Domain\\Common\\IMSSqlRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T09:46:11.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IRepository.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Domain\\Common\\IRepository.cs",
               "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IRepository.cs",
               "RelativeToolTip": "src\\UrlSaver.Domain\\Common\\IRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T09:45:15.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MSSqlRepository.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\MSSqlRepository.cs",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Identity\\MSSqlRepository.cs",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\MSSqlRepository.cs",
-              "RelativeToolTip": "src\\UrlSaver.Infrastructure\\Identity\\MSSqlRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "DocumentIndex": 3,
+              "Title": "UrlRepository.cs",
+              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\UrlRepository.cs",
+              "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Identity\\UrlRepository.cs",
+              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Identity\\UrlRepository.cs",
+              "RelativeToolTip": "src\\UrlSaver.Infrastructure\\Identity\\UrlRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T09:41:49.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "UrlGeneratorService.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Services\\UrlGeneratorService.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Services\\UrlGeneratorService.cs",
               "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Services\\UrlGeneratorService.cs",
               "RelativeToolTip": "src\\UrlSaver.Infrastructure\\Services\\UrlGeneratorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAARAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACUAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T09:30:25.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "EncodeService.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Infrastructure\\Services\\EncodeService.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Infrastructure\\Services\\EncodeService.cs",
@@ -216,54 +178,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "IEncodeService.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IEncodeService.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Domain\\Common\\IEncodeService.cs",
               "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IEncodeService.cs",
               "RelativeToolTip": "src\\UrlSaver.Domain\\Common\\IEncodeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T08:37:12.053Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "IUrlGeneratorService.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IUrlGeneratorService.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Domain\\Common\\IUrlGeneratorService.cs",
               "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Common\\IUrlGeneratorService.cs",
               "RelativeToolTip": "src\\UrlSaver.Domain\\Common\\IUrlGeneratorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T08:32:44.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "UrlModel.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Entities\\UrlModel.cs",
               "RelativeDocumentMoniker": "src\\UrlSaver.Domain\\Entities\\UrlModel.cs",
               "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Domain\\Entities\\UrlModel.cs",
               "RelativeToolTip": "src\\UrlSaver.Domain\\Entities\\UrlModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAACAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T08:16:24.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Program.cs",
-              "RelativeDocumentMoniker": "src\\UrlSaver.Api\\Program.cs",
-              "ToolTip": "D:\\Programming\\Projects\\link-saver\\UrlSaver\\src\\UrlSaver.Api\\Program.cs",
-              "RelativeToolTip": "src\\UrlSaver.Api\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T20:02:42.683Z",
               "EditorCaption": ""
             }
           ]

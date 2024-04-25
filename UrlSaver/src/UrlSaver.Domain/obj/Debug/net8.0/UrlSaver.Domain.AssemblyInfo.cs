@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrlSaver.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7e8b47ac0c143a35d1767a09447ff93054e9921")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a3b98c15d0fbffc6b214544f4c12bfcbfdfe71d")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrlSaver.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrlSaver.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

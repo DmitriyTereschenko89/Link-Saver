@@ -6,10 +6,10 @@ using UrlSaver.Infrastructure.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<IMSSqlRepository, MSSqlRepository>();
+builder.Services.AddTransient<IUrlRepository, UrlRepository>();
 builder.Services.AddTransient<IEncodeService, EncodeService>();
 builder.Services.AddTransient<IUrlGeneratorService, UrlGeneratorService>();
-builder.Services.AddDbContext<MSDbContext>(options =>
+builder.Services.AddDbContext<UrlDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MSSqlServer")));
 
 builder.Services.AddEndpointsApiExplorer();
@@ -22,10 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("api/{url}",(string url) =>
-{
-    return url;
-});
+app.MapGet("api/{url}", (string url) => url);
 
 //app.MapPost();
 

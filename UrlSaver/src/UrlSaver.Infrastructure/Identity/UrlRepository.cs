@@ -5,9 +5,9 @@ using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Infrastructure.Identity
 {
-    public class MSSqlRepository(MSDbContext context) : IMSSqlRepository
+    public class UrlRepository(UrlDbContext context) : IUrlRepository
     {
-        private readonly MSDbContext _context = context;
+        private readonly UrlDbContext _context = context;
         
         public async Task<UrlModel> GetUrlModelAsync(string url)
         {
