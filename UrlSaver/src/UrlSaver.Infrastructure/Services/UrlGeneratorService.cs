@@ -19,10 +19,12 @@ namespace UrlSaver.Infrastructure.Services
                 charCodes.Add((int)(urlHash % codingSequenceLength));
                 urlHash /= (uint)codingSequenceLength;
             }
+
             while (charCodes.Count < urlMaxLength)
             {
                 charCodes.Add(rnd.Next() % codingSequenceLength);
             }
+
             int differenceLength = urlMaxLength - charCodes.Count;
             for (int count = 0; count < differenceLength; ++count)
             {
@@ -35,14 +37,17 @@ namespace UrlSaver.Infrastructure.Services
                 {
                     charCodes[index % urlMaxLength] += charCodes[index % (urlMaxLength- 1)];
                 }
+
                 charCodes[index] %= codingSequenceLength;
             }
+
             charCodes = charCodes[..urlMaxLength];
             List<char> shortUrlList = [];
             foreach (int code in charCodes)
             {
                 shortUrlList.Add(codingSequence[code]);
             }
+
             shortUrlList = [.. shortUrlList.OrderBy(x => rnd.Next())];
             return string.Join("", shortUrlList);
         }
