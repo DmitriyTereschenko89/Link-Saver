@@ -8,8 +8,8 @@ namespace UrlSaver.Infrastructure.Services
     {
         public string GenerateUrl(string originalUrl)
         {
-            string codingSequence = ConfigurationManager.AppSettings["CodingSequence"];
-            int urlMaxLength = int.Parse(ConfigurationManager.AppSettings["UrlMaxLength"]);
+            string codingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+            int urlMaxLength = 7;
             int codingSequenceLength = codingSequence.Length;
             uint urlHash = (uint)originalUrl.GetHashCode();
             List<int> charCodes = [];

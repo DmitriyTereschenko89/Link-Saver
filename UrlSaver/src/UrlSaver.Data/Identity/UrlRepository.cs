@@ -3,12 +3,12 @@
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
 
-namespace UrlSaver.Infrastructure.Identity
+namespace UrlSaver.Data.Identity
 {
     public class UrlRepository(UrlDbContext context) : IUrlRepository
     {
         private readonly UrlDbContext _context = context;
-        
+
         public async Task<UrlModel> GetUrlModelAsync(string url)
         {
             return await _context.Urls.FirstOrDefaultAsync(x => x.OriginalUrl == url || x.ShortUrl == url);
