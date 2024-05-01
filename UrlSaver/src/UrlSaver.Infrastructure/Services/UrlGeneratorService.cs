@@ -12,7 +12,7 @@ namespace UrlSaver.Infrastructure.Services
 
         public string GenerateUrl(string originalUrl)
         {
-            _logger.LogInformation($"Start generate short url - {DateTimeOffset.Now}");            
+            _logger.LogInformation($"Start generate short url: {nameof(UrlGeneratorService)} - {DateTimeOffset.Now}");            
             string codingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
             int urlMaxLength = 7;
             int codingSequenceLength = codingSequence.Length;
@@ -54,7 +54,7 @@ namespace UrlSaver.Infrastructure.Services
             }
 
             shortUrlList = [.. shortUrlList.OrderBy(x => rnd.Next())];
-            _logger.LogInformation($"End generate short url - {DateTimeOffset.Now}");
+            _logger.LogInformation($"End generate short url: {nameof(UrlGeneratorService)} - {DateTimeOffset.Now}");
             return string.Join("", shortUrlList);
         }
     }

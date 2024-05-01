@@ -13,16 +13,16 @@ namespace UrlSaver.Infrastructure.Identity
         
         public async Task<UrlModel> GetUrlModelAsync(string url)
         {
-            _logger.LogInformation($"Try to get url model - {DateTimeOffset.Now}");
+            _logger.LogInformation($"Get url model: {nameof(UrlRepository)} - {DateTimeOffset.Now}");
             return await _context.Urls.FirstOrDefaultAsync(x => x.OriginalUrl == url || x.ShortUrl == url);
         }
 
         public async Task SaveUrlModelAsync(UrlModel urlModel)
         {
-            _logger.LogInformation($"Saving the url model - {DateTimeOffset.Now}");
+            _logger.LogInformation($"Save the url model: {nameof(UrlRepository)} - {DateTimeOffset.Now}");
             _context.Urls.Add(urlModel);
             await _context.SaveChangesAsync();
-            _logger.LogInformation($"End saving - {DateTimeOffset.Now}");
+            _logger.LogInformation($"End saving: {nameof(UrlRepository)} - {DateTimeOffset.Now}");
         }
     }
 }

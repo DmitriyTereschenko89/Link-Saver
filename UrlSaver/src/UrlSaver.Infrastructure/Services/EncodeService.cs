@@ -11,9 +11,9 @@ namespace UrlSaver.Infrastructure.Services
 
         public string Encode(string originalUrl)
         {
-            _logger.LogInformation($"Start encode url - {DateTimeOffset.Now}");
+            _logger.LogInformation($"Start encode url: {nameof(EncodeService)} - {DateTimeOffset.Now}");
             string shortUrl = _urlGeneratorService.GenerateUrl(originalUrl);
-            _logger.LogInformation($"End encode url - {DateTimeOffset.Now}");
+            _logger.LogInformation($"End encode url: {nameof(EncodeService)} - {DateTimeOffset.Now}");
             return shortUrl;
         }
     }
