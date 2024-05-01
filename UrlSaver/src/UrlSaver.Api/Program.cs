@@ -1,14 +1,18 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using UrlSaver.Domain.Common;
 using UrlSaver.Infrastructure.Identity;
 using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 // Add services to the container.
-builder.Services.AddTransient<IUrlRepository, UrlRepository>();
-builder.Services.AddTransient<IEncodeService, EncodeService>();
-builder.Services.AddTransient<IUrlGeneratorService, UrlGeneratorService>();
+builder.Services.AddScoped<IUrlRepository, UrlRepository>();
+builder.Services.AddScoped<IEncodeService, EncodeService>();
+builder.Services.AddScoped<IUrlGeneratorService, UrlGeneratorService>();
 builder.Services.AddDbContext<UrlDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MSSqlServer")));
 
@@ -22,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("api/{url}", (string url) => url);
+app.MapGet("api/{url}", async (string url, [FromServices] IEncodeService encodeService) => await Task.Run(() => encodeService.Encode(url)));
 
 //app.MapPost();
 
