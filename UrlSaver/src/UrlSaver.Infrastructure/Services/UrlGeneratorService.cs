@@ -1,15 +1,17 @@
-﻿using System.Configuration;
+﻿using Microsoft.Extensions.Options;
 
 using UrlSaver.Domain.Common;
+using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Infrastructure.Services
 {
-    public class UrlGeneratorService : IUrlGeneratorService
+    public class UrlGeneratorService(IOptions<EncodeOptions> options) : IUrlGeneratorService
     {
+        private readonly IOptions<EncodeOptions> _options = options;
         public string GenerateUrl(string originalUrl)
         {
-            string codingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-            int urlMaxLength = 7;
+            string codingSequence = _options.Value.CodingSequence;
+            int urlMaxLength = _options.Value.UrlMaxLength;
             int codingSequenceLength = codingSequence.Length;
             uint urlHash = (uint)originalUrl.GetHashCode();
             List<int> charCodes = [];
