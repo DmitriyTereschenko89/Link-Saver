@@ -26,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("api/{url}", async (string url, [FromServices] IEncodeService encodeService) => await Task.Run(() => encodeService.Encode(url)));
+app.MapGet("api/{url}", (string url, [FromServices] IEncodeService encodeService) => encodeService.Encode(url));
 
 //app.MapPost();
 
