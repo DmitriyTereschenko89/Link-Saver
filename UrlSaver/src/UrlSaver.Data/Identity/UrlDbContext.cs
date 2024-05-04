@@ -2,9 +2,9 @@
 
 using UrlSaver.Domain.Entities;
 
-namespace UrlSaver.Infrastructure.Identity
+namespace UrlSaver.Data.Identity
 {
-    public class UrlDbContext(DbContextOptions<UrlDbContext> options) : DbContext(options)
+    public class UrlDbContext(DbContextOptions options) : DbContext(options)
     {
         public DbSet<UrlModel> Urls { get; set; }
     }
