@@ -1,0 +1,6 @@
+@UrlSaver.Api_HostAddress = http://localhost:5085
+
+GET {{UrlSaver.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
