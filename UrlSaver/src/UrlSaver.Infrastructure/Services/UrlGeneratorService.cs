@@ -9,7 +9,6 @@ namespace UrlSaver.Infrastructure.Services
     {
         private const string CodingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
         private readonly IOptions<EncodeOptions> _options = options;
-
         public string GenerateUrl(string originalUrl)
         {
             int urlMaxLength = _options.Value.UrlMaxLength;
