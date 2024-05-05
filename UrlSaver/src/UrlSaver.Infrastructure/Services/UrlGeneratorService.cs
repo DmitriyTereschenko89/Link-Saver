@@ -1,21 +1,18 @@
-﻿using System.Configuration;
-
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Options;
 
 using UrlSaver.Domain.Common;
+using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Infrastructure.Services
 {
-    public class UrlGeneratorService(ILogger<UrlGeneratorService> logger) : IUrlGeneratorService
+    public class UrlGeneratorService(IOptions<EncodeOptions> options) : IUrlGeneratorService
     {
-        private readonly ILogger<UrlGeneratorService> _logger = logger;
-
+        private const string CodingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+        private readonly IOptions<EncodeOptions> _options = options;
         public string GenerateUrl(string originalUrl)
         {
-            _logger.LogInformation($"Start generate short url: {nameof(UrlGeneratorService)} - {DateTimeOffset.Now}");            
-            string codingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-            int urlMaxLength = 7;
-            int codingSequenceLength = codingSequence.Length;
+            int urlMaxLength = _options.Value.UrlMaxLength;
+            int codingSequenceLength = CodingSequence.Length;
             uint urlHash = (uint)originalUrl.GetHashCode();
             List<int> charCodes = [];
             Random rnd = new();
@@ -50,11 +47,10 @@ namespace UrlSaver.Infrastructure.Services
             List<char> shortUrlList = [];
             foreach (int code in charCodes)
             {
-                shortUrlList.Add(codingSequence[code]);
+                shortUrlList.Add(CodingSequence[code]);
             }
 
             shortUrlList = [.. shortUrlList.OrderBy(x => rnd.Next())];
-            _logger.LogInformation($"End generate short url: {nameof(UrlGeneratorService)} - {DateTimeOffset.Now}");
             return string.Join("", shortUrlList);
         }
     }

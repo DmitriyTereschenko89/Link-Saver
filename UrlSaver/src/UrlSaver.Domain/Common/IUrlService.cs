@@ -2,7 +2,7 @@
 
 namespace UrlSaver.Domain.Common
 {
-    public interface IUrlRepository
+    public interface IUrlService
     {
         Task<UrlModel> GetUrlAsync(string url);
         Task SaveUrlAsync(UrlModel urlModel);
