@@ -5,6 +5,7 @@ using UrlSaver.Domain.Common;
 using UrlSaver.Data.Identity;
 using UrlSaver.Infrastructure.Services;
 using UrlSaver.Domain.Entities;
+using UrlSaver.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
@@ -30,6 +31,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.MapGet("api/{url}", (string url, [FromServices] IEncodeService encode) => encode.Encode(url));
 
