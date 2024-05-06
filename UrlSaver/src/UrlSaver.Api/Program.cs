@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using UrlSaver.Data.Identity;
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
+using UrlSaver.Infrastructure.Common;
 using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddScoped<IUrlRepository, UrlRepository>();
 builder.Services.AddScoped<IUrlService, UrlService>();
 builder.Services.AddScoped<IEncodeService, EncodeService>();
 builder.Services.AddScoped<IUrlGeneratorService, UrlGeneratorService>();
+builder.Services.AddScoped<IRedirectService, RedirectService>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<UrlDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MSSqlServer")));
 
@@ -29,7 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("api/{url}", (string url, [FromServices] IEncodeService encode) => encode.Encode(url));
+app.MapGet("api/{url}", (string url, [FromServices] IEncodeService encode) => Results.Ok(encode.Encode(url)));
 
 //app.MapPost();
 
