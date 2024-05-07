@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using UrlSaver.Domain.Common;
-using UrlSaver.Data.Identity;
 using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Data.Identity
