@@ -7,7 +7,6 @@ namespace UrlSaver.Api.Middleware
 {
     public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
     {
-        private const string MessageTemplate = "\nMessage:{Message}\nException:{Exception}";
         private readonly RequestDelegate _next = next;
         private readonly ILogger<ExceptionHandlingMiddleware> _logger = logger;
 
@@ -20,13 +19,13 @@ namespace UrlSaver.Api.Middleware
                     problemDetails.Status = StatusCodes.Status204NoContent;
                     problemDetails.Detail = nullReferenceException.Message;
                     context.Response.StatusCode = StatusCodes.Status204NoContent;
-                    _logger.LogError(MessageTemplate, nullReferenceException.Message, nullReferenceException);
+                    _logger.LogError(nullReferenceException, "Exception occured. Sorry about that.");
                     break;
                 default:
                     problemDetails.Status = StatusCodes.Status500InternalServerError;
                     problemDetails.Detail = exception.Message;
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    _logger.LogError(MessageTemplate, exception.Message, exception);
+                    _logger.LogError(exception, "Exception occured. Sorry about that.");
                     break;
             }
 

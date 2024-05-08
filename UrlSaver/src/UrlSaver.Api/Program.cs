@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Encodings.Web;
 
 using UrlSaver.Api.Extentions;
 using UrlSaver.Api.Middleware;
@@ -14,10 +15,15 @@ using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
-builder.Logging.AddSimpleConsole(options =>
+builder.Logging.AddJsonConsole(options =>
 {
-    options.SingleLine = true;
+    options.UseUtcTimestamp = true;
     options.TimestampFormat = "yyyy-MM-dd HH:mm:ss";
+    options.JsonWriterOptions = new JsonWriterOptions
+    {
+        Indented = true,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    };
 });
 
 // Add services to the container.
