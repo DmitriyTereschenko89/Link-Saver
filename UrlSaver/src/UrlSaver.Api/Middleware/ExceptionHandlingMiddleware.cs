@@ -19,13 +19,13 @@ namespace UrlSaver.Api.Middleware
                     problemDetails.Status = StatusCodes.Status204NoContent;
                     problemDetails.Detail = nullReferenceException.Message;
                     context.Response.StatusCode = StatusCodes.Status204NoContent;
-                    _logger.LogError(nullReferenceException, "Exception occured. Sorry about that.");
+                    _logger.LogError(nullReferenceException, "Exception occured.");
                     break;
                 default:
                     problemDetails.Status = StatusCodes.Status500InternalServerError;
                     problemDetails.Detail = exception.Message;
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    _logger.LogError(exception, "Exception occured. Sorry about that.");
+                    _logger.LogError(exception, "Exception occured.");
                     break;
             }
 
