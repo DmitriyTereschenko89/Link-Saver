@@ -14,7 +14,11 @@ using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
-builder.Logging.AddJsonConsole();
+builder.Logging.AddSimpleConsole(options =>
+{
+    options.SingleLine = true;
+    options.TimestampFormat = "yyyy-MM-dd HH:mm:ss";
+});
 
 // Add services to the container.
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
