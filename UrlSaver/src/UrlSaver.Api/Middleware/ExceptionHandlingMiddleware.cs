@@ -1,7 +1,8 @@
-﻿using System;
-using System.Text.Json;
+﻿using System.Data.Entity.Core;
 
 using Microsoft.AspNetCore.Mvc;
+
+using UrlSaver.Api.Exceptions;
 
 namespace UrlSaver.Api.Middleware
 {
@@ -15,11 +16,30 @@ namespace UrlSaver.Api.Middleware
             var problemDetails = new ProblemDetails();
             switch (exception)
             {
-                case NullReferenceException nullReferenceException:
-                    problemDetails.Status = StatusCodes.Status204NoContent;
-                    problemDetails.Detail = nullReferenceException.Message;
-                    context.Response.StatusCode = StatusCodes.Status204NoContent;
-                    _logger.LogError(nullReferenceException, "Exception occured.");
+
+                case BadHttpRequestException badRequestException:
+                    problemDetails.Status = StatusCodes.Status400BadRequest;
+                    problemDetails.Detail = badRequestException.Message;
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    _logger.LogError(badRequestException, "Exception occured.");
+                    break;
+                case UnauthorizedAccessException unauthorizedAccessException:
+                    problemDetails.Status = StatusCodes.Status401Unauthorized;
+                    problemDetails.Detail = unauthorizedAccessException.Message;
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    _logger.LogError(unauthorizedAccessException, "Exception occured.");
+                    break;
+                case ForbiddenException forbiddenException:
+                    problemDetails.Status = StatusCodes.Status403Forbidden;
+                    problemDetails.Detail = forbiddenException.Message;
+                    context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                    _logger.LogError(forbiddenException, "Exception occured.");
+                    break;
+                case ObjectNotFoundException objectNotFoundException:
+                    problemDetails.Status = StatusCodes.Status404NotFound;
+                    problemDetails.Detail = objectNotFoundException.Message;
+                    context.Response.StatusCode = StatusCodes.Status404NotFound;
+                    _logger.LogError(objectNotFoundException, "Exception occured.");
                     break;
                 default:
                     problemDetails.Status = StatusCodes.Status500InternalServerError;
