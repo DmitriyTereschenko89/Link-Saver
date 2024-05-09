@@ -34,9 +34,10 @@ namespace UrlSaver.Api.Middleware
                 ArgumentException => StatusCodes.Status404NotFound,
                 ItemNotFoundException => StatusCodes.Status404NotFound,
                 KeyNotFoundException => StatusCodes.Status404NotFound,
-                NotImplementedException => StatusCodes.Status404NotFound,
+                NotImplementedException => StatusCodes.Status501NotImplemented,
                 _ => StatusCodes.Status500InternalServerError
             };
+
             problemDetails.Detail = exception.Message;
             context.Response.StatusCode = (int)problemDetails.Status;
             _logger.LogError(exception, "Exception occured.");
