@@ -29,7 +29,6 @@ namespace UrlSaver.Api.Middleware
                 UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
                 ForbiddenException => StatusCodes.Status403Forbidden,
                 NullReferenceException => StatusCodes.Status404NotFound,
-                ArgumentNullException => StatusCodes.Status404NotFound,
                 ArgumentException => StatusCodes.Status404NotFound,
                 ItemNotFoundException => StatusCodes.Status404NotFound,
                 KeyNotFoundException => StatusCodes.Status404NotFound,
