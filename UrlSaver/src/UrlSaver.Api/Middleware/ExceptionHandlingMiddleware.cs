@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 using UrlSaver.Api.Exceptions;
 
 namespace UrlSaver.Api.Middleware

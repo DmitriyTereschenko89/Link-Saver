@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
 
