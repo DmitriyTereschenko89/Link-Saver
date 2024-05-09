@@ -1,6 +1,5 @@
-﻿using System.Management.Automation;
+﻿using Microsoft.AspNetCore.Mvc;
 
-using Microsoft.AspNetCore.Mvc;
 using UrlSaver.Api.Exceptions;
 
 namespace UrlSaver.Api.Middleware
