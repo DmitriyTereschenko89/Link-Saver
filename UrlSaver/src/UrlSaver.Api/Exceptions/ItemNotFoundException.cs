@@ -1,5 +1,6 @@
 ﻿namespace UrlSaver.Api.Exceptions
 {
+    [Serializable]
     public class ItemNotFoundException : Exception
     {
         public ItemNotFoundException() { }
