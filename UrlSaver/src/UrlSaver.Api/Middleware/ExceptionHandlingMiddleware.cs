@@ -25,11 +25,9 @@ namespace UrlSaver.Api.Middleware
             var problemDetails = new ProblemDetails();
             problemDetails.Status = exception switch
             {
-                BadHttpRequestException => StatusCodes.Status400BadRequest,
+                ArgumentException => StatusCodes.Status400BadRequest,
                 UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
                 ForbiddenException => StatusCodes.Status403Forbidden,
-                NullReferenceException => StatusCodes.Status404NotFound,
-                ArgumentException => StatusCodes.Status404NotFound,
                 ItemNotFoundException => StatusCodes.Status404NotFound,
                 KeyNotFoundException => StatusCodes.Status404NotFound,
                 NotImplementedException => StatusCodes.Status501NotImplemented,
