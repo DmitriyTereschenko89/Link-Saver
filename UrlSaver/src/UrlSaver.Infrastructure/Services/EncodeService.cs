@@ -8,8 +8,7 @@ namespace UrlSaver.Infrastructure.Services
 
         public string Encode(string originalUrl)
         {
-            string shortUrl = _urlGeneratorService.GenerateUrl(originalUrl);
-            return shortUrl;
+            return _urlGeneratorService.GenerateUrl(originalUrl);
         }
     }
 }

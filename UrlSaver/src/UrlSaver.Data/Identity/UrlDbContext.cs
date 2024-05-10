@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
 using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Data.Identity
