@@ -50,6 +50,7 @@ namespace UrlSaver.Infrastructure.Services
             }
 
             shortUrlList = [.. shortUrlList.OrderBy(x => rnd.Next())];
+
             return string.Join("", shortUrlList);
         }
     }

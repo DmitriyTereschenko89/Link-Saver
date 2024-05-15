@@ -1,19 +1,28 @@
-﻿using UrlSaver.Domain.Common;
+﻿using Microsoft.Extensions.Options;
+using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
 
 namespace UrlSaver.Infrastructure.Services
 {
-    public class UrlService(IUrlRepository urlRepository) : IUrlService
+    public class UrlService(IUrlRepository urlRepository, IEncodeService encodeService, IOptions<UrlLifespanOptions> options
+        ) : IUrlService
     {
         private readonly IUrlRepository _urlRepository = urlRepository;
-        public async Task<UrlModel> GetUrlAsync(string url)
+        private readonly IEncodeService _encodeService = encodeService;
+        private readonly IOptions<UrlLifespanOptions> _options = options;
+        public async Task<string> GetOriginalUrlAsync(string key)
         {
-            return await _urlRepository.GetUrlAsync(url);
+            return await _urlRepository.GetOriginalUrlAsync(key);
         }
 
-        public async Task SaveUrlAsync(UrlModel urlModel)
+        public async Task SaveUrlAsync(UrlModel originalUrl)
         {
-            await _urlRepository.SaveUrlAsync(urlModel);
+            DateTimeOffset createdDate = DateTimeOffset.UtcNow;
+            DateTimeOffset expiredDate = createdDate.AddDays(_options.Value.UrlLifespanInDays);
+            originalUrl.CreatedDate = createdDate;
+            originalUrl.ExpiredDate = expiredDate;
+            originalUrl.ShortUrl = _encodeService.Encode(originalUrl.OriginalUrl);
+            await _urlRepository.SaveUrlAsync(originalUrl);
         }
     }
 }
