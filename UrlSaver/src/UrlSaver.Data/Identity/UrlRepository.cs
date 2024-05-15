@@ -8,9 +8,11 @@ namespace UrlSaver.Data.Identity
     {
         private readonly UrlDbContext _context = context;
 
-        public async Task<UrlModel> GetUrlAsync(string url)
+        public async Task<string> GetOriginalUrlAsync(string key)
         {
-            return await _context.Urls.FirstOrDefaultAsync(x => x.OriginalUrl == url || x.ShortUrl == url);
+            var originalUrl = await _context.Urls.FirstOrDefaultAsync(x => x.ShortUrl == key && x.ExpiredDate >= DateTimeOffset.UtcNow);
+
+            return originalUrl?.OriginalUrl ?? string.Empty;
         }
 
         public async Task SaveUrlAsync(UrlModel urlModel)

@@ -4,7 +4,7 @@ namespace UrlSaver.Domain.Common
 {
     public interface IUrlService
     {
-        Task<UrlModel> GetUrlAsync(string url);
-        Task SaveUrlAsync(UrlModel urlModel);
+        Task<string> GetOriginalUrlAsync(string key);
+        Task SaveUrlAsync(UrlModel originalUrl);
     }
 }

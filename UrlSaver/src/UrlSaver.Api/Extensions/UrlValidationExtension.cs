@@ -1,6 +1,6 @@
 ﻿namespace UrlSaver.Api.Extentions
 {
-    public static class UrlValidationExtention
+    public static class UrlValidationExtension
     {
         public static bool ValidateUrl(this string url)
         {
