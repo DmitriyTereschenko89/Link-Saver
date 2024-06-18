@@ -37,6 +37,7 @@ builder.Services.AddSwaggerDocument(options =>
         };
     };
 });
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Policy", builder =>
@@ -47,9 +48,11 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader();
     });
 });
+
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
+builder.Services.AddMemoryCache();
 builder.Services.AddScoped<IUrlRepository, UrlRepository>();
 builder.Services.AddScoped<IUrlService, UrlService>();
 builder.Services.AddScoped<IEncodeService, EncodeService>();
