@@ -14,21 +14,21 @@ namespace UrlSaver.Api.Controllers
 
         [HttpGet]
         [Route("/{key}")]
-        public async Task<IActionResult> Get(string key)
+        public async Task<UrlDto> Get(string key)
         {
             var originalUrl = await _urlService.GetOriginalUrlAsync(key);
 
-            return string.IsNullOrEmpty(originalUrl) ? NotFound() : Redirect(originalUrl);
+            return _mapper.Map<UrlDto>(originalUrl);
         }
 
         [HttpPost]
         [Route("/")]
-        public async Task<IResult> CreateShortUrl([FromBody] UrlDto originalUrlDto)
+        public async Task<UrlDto> CreateShortUrl([FromBody] UrlDto originalUrlDto)
         {
             var originalUrl = _mapper.Map<UrlModel>(originalUrlDto);
             await _urlService.SaveUrlAsync(originalUrl);
-
-            return Results.Ok(originalUrl.ShortUrl);
+            
+            return _mapper.Map<UrlDto>(originalUrl);
         }
     }
 }
