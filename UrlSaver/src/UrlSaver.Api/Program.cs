@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
+
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using UrlSaver.Api.Middleware;
@@ -23,6 +25,28 @@ builder.Logging.AddJsonConsole(options =>
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddSwaggerDocument(options =>
+{
+    options.PostProcess = document =>
+    {
+        document.Info = new NSwag.OpenApiInfo
+        {
+            Title = "Url Shortener Api.",
+            Version = "v1",
+            Description = "An ASP.NET Core Web API for generation short url from long url."
+        };
+    };
+});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Policy", builder =>
+    {
+        builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
@@ -37,6 +61,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseCors("Policy");
+app.UseOpenApi();
+app.UseOpenApi();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
