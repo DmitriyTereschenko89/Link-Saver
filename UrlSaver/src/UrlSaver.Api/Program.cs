@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Net.Http.Headers;
 
 using System.Text.Encodings.Web;
@@ -52,7 +53,11 @@ builder.Services.AddCors(options =>
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
-builder.Services.AddMemoryCache();
+builder.Services.AddMemoryCache(options => new MemoryCacheOptions
+{
+    SizeLimit = 1024
+});
+builder.Services.AddScoped<ICacheService, CacheService>();
 builder.Services.AddScoped<IUrlRepository, UrlRepository>();
 builder.Services.AddScoped<IUrlService, UrlService>();
 builder.Services.AddScoped<IEncodeService, EncodeService>();

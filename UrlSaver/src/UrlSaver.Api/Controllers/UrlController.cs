@@ -10,27 +10,18 @@ using UrlSaver.Domain.Entities;
 namespace UrlSaver.Api.Controllers
 {
     [ApiController]
-    public class UrlController(IUrlService urlService, IMapper mapper, IMemoryCache cache, IOptions<UrlLifespanOptions> options) : ControllerBase
+    public class UrlController(IUrlService urlService, IMapper mapper, ICacheService cacheService) : ControllerBase
     {
-        private readonly IOptions<UrlLifespanOptions> _options = options;
         private readonly IUrlService _urlService = urlService;
         private readonly IMapper _mapper = mapper;
-        private readonly IMemoryCache _cache = cache;
+        private readonly ICacheService _cacheService = cacheService;
 
         [HttpGet]
         [Route("/{key}")]
         public async Task<UrlDto> Get(string key)
         {
-            TimeSpan _cacheExpiration = TimeSpan.FromDays(_options.Value.UrlLifespanInDays);
-            if (!_cache.TryGetValue(key, out string originalUrl))
-            {
-                originalUrl = await _urlService.GetOriginalUrlAsync(key);
-                if (!string.IsNullOrEmpty(originalUrl))
-                {
-                    _cache.Set(key, originalUrl, _cacheExpiration);
-                }
-            }
-            
+            string originalUrl = await _cacheService.GetOrCreateAsync(key, async () => await _urlService.GetOriginalUrlAsync(key));
+
             return _mapper.Map<UrlDto>(originalUrl);
         }
 
