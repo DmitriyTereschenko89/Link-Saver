@@ -26,6 +26,7 @@ namespace UrlSaver.Infrastructure.Services
                         .SetAbsoluteExpiration(TimeSpan.FromSeconds(30));
 
                         originalUrl = await createKey();
+
                         if (!string.IsNullOrEmpty(originalUrl))
                         {
                             _cache.Set(key, originalUrl, cacheEntryOptions);
