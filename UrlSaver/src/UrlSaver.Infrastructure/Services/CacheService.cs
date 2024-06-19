@@ -8,11 +8,13 @@ namespace UrlSaver.Infrastructure.Services
     {
         private readonly IMemoryCache _cache = cache;
         private readonly ConcurrentDictionary<object, SemaphoreSlim> _lock = new();
+
         public async Task<string> GetOrCreateAsync(string key, Func<Task<string>> createKey)
         {
             if (!_cache.TryGetValue(key, out string originalUrl))
             {
                 SemaphoreSlim semaphoreLocks = _lock.GetOrAdd(key, new SemaphoreSlim(1, 1));
+
                 await semaphoreLocks.WaitAsync();
                 try
                 {
@@ -22,6 +24,7 @@ namespace UrlSaver.Infrastructure.Services
                         .SetSize(1)
                         .SetSlidingExpiration(TimeSpan.FromSeconds(10))
                         .SetAbsoluteExpiration(TimeSpan.FromSeconds(30));
+
                         originalUrl = await createKey();
                         if (!string.IsNullOrEmpty(originalUrl))
                         {
