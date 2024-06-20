@@ -7,7 +7,7 @@ namespace UrlSaver.Data.Identity
     {
         public UrlDbContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
+            _ = Database.EnsureCreated();
         }
         public DbSet<UrlModel> Urls { get; set; }
     }
