@@ -27,7 +27,7 @@ namespace UrlSaver.Api.Controllers
         {
             var originalUrl = _mapper.Map<UrlModel>(originalUrlDto);
             await _urlService.SaveUrlAsync(originalUrl);
-            
+
             return _mapper.Map<UrlDto>(originalUrl);
         }
     }

@@ -17,8 +17,8 @@ namespace UrlSaver.Data.Identity
 
         public async Task SaveUrlAsync(UrlModel urlModel)
         {
-            _context.Urls.Add(urlModel);
-            await _context.SaveChangesAsync();
+            _ = _context.Urls.Add(urlModel);
+            _ = await _context.SaveChangesAsync();
         }
     }
 }

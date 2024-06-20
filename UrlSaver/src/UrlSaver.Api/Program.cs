@@ -1,8 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Net.Http.Headers;
-
-using System.Text.Encodings.Web;
+﻿using System.Text.Encodings.Web;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using UrlSaver.Api.Middleware;
 using UrlSaver.Api.Profiles;
 using UrlSaver.Data.Identity;
@@ -37,16 +35,18 @@ builder.Services.AddSwaggerDocument(options =>
         };
     };
 });
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Policy", builder =>
     {
-        builder
+        _ = builder
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
 });
+
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
@@ -66,8 +66,8 @@ app.UseOpenApi();
 app.UseOpenApi();
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    _ = app.UseSwagger();
+    _ = app.UseSwaggerUI();
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
