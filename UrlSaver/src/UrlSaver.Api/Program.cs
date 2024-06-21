@@ -51,11 +51,14 @@ builder.Services.AddCors(options =>
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
-builder.Services.AddMemoryCache(options => new MemoryCacheOptions
+builder.Services.Configure<CacheEntryOptions>(builder.Configuration.GetSection("CacheEntryOptions"));
+builder.Services.AddMemoryCache(options =>
 {
-    SizeLimit = 1024
+    _ = new MemoryCacheOptions
+    {
+        SizeLimit = long.Parse(builder.Configuration.GetSection("CacheMemorySizeLimit").Value)
+    };
 });
-builder.Services.AddScoped<ICacheService, CacheService>();
 builder.Services.AddScoped<IUrlRepository, UrlRepository>();
 builder.Services.AddScoped<IUrlService, UrlService>();
 builder.Services.AddScoped<IEncodeService, EncodeService>();
