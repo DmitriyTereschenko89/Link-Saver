@@ -14,9 +14,9 @@ namespace UrlSaver.Api.Middleware
             {
                 await _next(context);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                await ConvertExceptionAsync(context, exception);          
+                await ConvertExceptionAsync(context, exception);
             }
         }
 

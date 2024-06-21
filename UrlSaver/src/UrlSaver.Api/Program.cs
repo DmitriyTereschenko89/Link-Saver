@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Net.Http.Headers;
 
 using System.Text.Encodings.Web;
+=======
+﻿using System.Text.Encodings.Web;
+>>>>>>> b1a5b2bc3a987e9b7faa9c66093a57f010753e22
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 using UrlSaver.Api.Middleware;
 using UrlSaver.Api.Profiles;
 using UrlSaver.Data.Identity;
@@ -43,7 +48,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("Policy", builder =>
     {
-        builder
+        _ = builder
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader();
@@ -74,8 +79,8 @@ app.UseOpenApi();
 app.UseOpenApi();
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    _ = app.UseSwagger();
+    _ = app.UseSwaggerUI();
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();

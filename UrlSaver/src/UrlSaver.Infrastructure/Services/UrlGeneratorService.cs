@@ -36,7 +36,7 @@ namespace UrlSaver.Infrastructure.Services
                 }
                 else
                 {
-                    charCodes[index % urlMaxLength] += charCodes[index % (urlMaxLength- 1)];
+                    charCodes[index % urlMaxLength] += charCodes[index % (urlMaxLength - 1)];
                 }
 
                 charCodes[index] %= codingSequenceLength;
