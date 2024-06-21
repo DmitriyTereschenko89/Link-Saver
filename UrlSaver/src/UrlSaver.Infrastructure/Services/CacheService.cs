@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using Microsoft.Extensions.Caching.Memory;
 using UrlSaver.Domain.Common;
 
 namespace UrlSaver.Infrastructure.Services
 {
-    public class CacheService (IMemoryCache cache) : ICacheService
+    public class CacheService(IMemoryCache cache) : ICacheService
     {
         private readonly IMemoryCache _cache = cache;
         private readonly ConcurrentDictionary<object, SemaphoreSlim> _lock = new();
@@ -16,6 +16,7 @@ namespace UrlSaver.Infrastructure.Services
                 SemaphoreSlim semaphoreLocks = _lock.GetOrAdd(key, new SemaphoreSlim(1, 1));
 
                 await semaphoreLocks.WaitAsync();
+
                 try
                 {
                     if (!_cache.TryGetValue(key, out originalUrl))
@@ -29,13 +30,13 @@ namespace UrlSaver.Infrastructure.Services
 
                         if (!string.IsNullOrEmpty(originalUrl))
                         {
-                            _cache.Set(key, originalUrl, cacheEntryOptions);
+                            _ = _cache.Set(key, originalUrl, cacheEntryOptions);
                         }
                     }
                 }
                 finally
                 {
-                    semaphoreLocks.Release();
+                    _ = semaphoreLocks.Release();
                 }
             }
 

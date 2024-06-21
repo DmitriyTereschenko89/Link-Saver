@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Net.Http.Headers;
-
-using System.Text.Encodings.Web;
-=======
 ﻿using System.Text.Encodings.Web;
->>>>>>> b1a5b2bc3a987e9b7faa9c66093a57f010753e22
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using UrlSaver.Api.Middleware;
 using UrlSaver.Api.Profiles;
 using UrlSaver.Data.Identity;

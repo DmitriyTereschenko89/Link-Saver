@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Options;
-
 using UrlSaver.Api.DataTransferObjects;
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
