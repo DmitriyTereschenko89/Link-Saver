@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using UrlSaver.Api.DataTransferObjects;
+using UrlSaver.Api.Exceptions;
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
 
@@ -20,16 +21,22 @@ namespace UrlSaver.Api.Controllers
         [Route("/{key}")]
         public async Task<UrlDto> Get(string key)
         {
-            string originalUrl = await _memoryCache.GetOrCreateAsync(key, async (entry) =>
+            if (!_memoryCache.TryGetValue(key, out string originalUrl))
             {
-                _ = entry.SetSize(_cacheEntryOptions.Value.SizeLimit)
-                        .SetSlidingExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.SlidingExpirationSeconds))
-                        .SetAbsoluteExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.AbsoluteExpirationSeconds));
+                originalUrl = await _urlService.GetOriginalUrlAsync(key);
 
-                var originalUrl = await _urlService.GetOriginalUrlAsync(key);
+                if (string.IsNullOrEmpty(originalUrl))
+                {
+                    throw new ItemNotFoundException();
+                }
 
-                return !string.IsNullOrEmpty(originalUrl) ? originalUrl : string.Empty;
-            });
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSize(_cacheEntryOptions.Value.SizeLimit)
+                    .SetSlidingExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.SlidingExpirationSeconds))
+                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.AbsoluteExpirationSeconds));
+
+                _ = _memoryCache.Set(key, originalUrl, cacheEntryOptions);
+            }
 
             return _mapper.Map<UrlDto>(originalUrl);
         }
