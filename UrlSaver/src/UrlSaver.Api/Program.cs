@@ -1,6 +1,7 @@
 ﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using UrlSaver.Api.Middleware;
 using UrlSaver.Api.Profiles;
 using UrlSaver.Data.Identity;
@@ -9,6 +10,8 @@ using UrlSaver.Domain.Entities;
 using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var cacheOptions = builder.Configuration.GetSection("CacheSettings");
+
 builder.Logging.ClearProviders();
 builder.Logging.AddJsonConsole(options =>
 {
@@ -50,6 +53,14 @@ builder.Services.AddCors(options =>
 builder.Services.AddAutoMapper(typeof(UrlProfile));
 builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeSettings"));
 builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
+builder.Services.Configure<CacheOptions>(cacheOptions);
+builder.Services.AddMemoryCache(options =>
+{
+    _ = new MemoryCacheOptions
+    {
+        SizeLimit = cacheOptions.Get<CacheOptions>().SizeLimit
+    };
+});
 builder.Services.AddScoped<IUrlRepository, UrlRepository>();
 builder.Services.AddScoped<IUrlService, UrlService>();
 builder.Services.AddScoped<IEncodeService, EncodeService>();

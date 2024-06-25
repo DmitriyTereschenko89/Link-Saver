@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using UrlSaver.Api.DataTransferObjects;
+using UrlSaver.Api.Exceptions;
 using UrlSaver.Domain.Common;
 using UrlSaver.Domain.Entities;
 
@@ -17,6 +18,11 @@ namespace UrlSaver.Api.Controllers
         public async Task<UrlDto> Get(string key)
         {
             var originalUrl = await _urlService.GetOriginalUrlAsync(key);
+
+            if (string.IsNullOrEmpty(originalUrl))
+            {
+                throw new ItemNotFoundException();
+            }
 
             return _mapper.Map<UrlDto>(originalUrl);
         }
