@@ -13,9 +13,9 @@ namespace UrlSaver.Infrastructure.Services
     {
         private readonly IUrlRepository _urlRepository = urlRepository;
         private readonly IEncodeService _encodeService = encodeService;
-        private readonly IOptions<UrlLifespanOptions> _options = options;
+        private readonly UrlLifespanOptions _options = options.Value;
         private readonly IMemoryCache _memoryCache = memoryCache;
-        private readonly IOptions<CacheOptions> _cacheEntryOptions = cacheEntryOptions;
+        private readonly CacheOptions _cacheEntryOptions = cacheEntryOptions.Value;
 
         public async Task<string> GetOriginalUrlAsync(string key)
         {
@@ -29,9 +29,9 @@ namespace UrlSaver.Infrastructure.Services
                 }
 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
-                    .SetSize(_cacheEntryOptions.Value.Size)
-                    .SetSlidingExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.SlidingExpirationSeconds))
-                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.Value.AbsoluteExpirationSeconds));
+                    .SetSize(_cacheEntryOptions.Size)
+                    .SetSlidingExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.SlidingExpirationSeconds))
+                    .SetAbsoluteExpiration(TimeSpan.FromSeconds(_cacheEntryOptions.AbsoluteExpirationSeconds));
 
                 _ = _memoryCache.Set(key, originalUrl, cacheEntryOptions);
             }
@@ -42,7 +42,7 @@ namespace UrlSaver.Infrastructure.Services
         public async Task SaveUrlAsync(UrlModel originalUrl)
         {
             DateTimeOffset createdDate = DateTimeOffset.UtcNow;
-            DateTimeOffset expiredDate = createdDate.AddDays(_options.Value.UrlLifespanInDays);
+            DateTimeOffset expiredDate = createdDate.AddDays(_options.UrlLifespanInDays);
             originalUrl.CreatedDate = createdDate;
             originalUrl.ExpiredDate = expiredDate;
             originalUrl.ShortUrl = _encodeService.Encode(originalUrl.OriginalUrl);

@@ -19,7 +19,12 @@ namespace UrlSaver.Api.Controllers
         {
             var originalUrl = await _urlService.GetOriginalUrlAsync(key);
 
-            return string.IsNullOrEmpty(originalUrl) ? throw new ItemNotFoundException() : _mapper.Map<UrlDto>(originalUrl);
+            if (string.IsNullOrEmpty(originalUrl))
+            {
+                throw new ItemNotFoundException();
+            }
+
+            return _mapper.Map<UrlDto>(originalUrl);
         }
 
         [HttpPost]

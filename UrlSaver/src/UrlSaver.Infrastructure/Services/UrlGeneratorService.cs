@@ -7,10 +7,11 @@ namespace UrlSaver.Infrastructure.Services
     public class UrlGeneratorService(IOptions<EncodeOptions> options) : IUrlGeneratorService
     {
         private const string CodingSequence = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-        private readonly IOptions<EncodeOptions> _options = options;
+        private readonly EncodeOptions _options = options.Value;
+
         public string GenerateUrl(string originalUrl)
         {
-            int urlMaxLength = _options.Value.UrlMaxLength;
+            int urlMaxLength = _options.UrlMaxLength;
             int codingSequenceLength = CodingSequence.Length;
             uint urlHash = (uint)originalUrl.GetHashCode();
             List<int> charCodes = [];
