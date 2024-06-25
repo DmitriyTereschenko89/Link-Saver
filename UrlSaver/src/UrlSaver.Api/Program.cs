@@ -10,11 +10,7 @@ using UrlSaver.Domain.Entities;
 using UrlSaver.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
-    .Build();
-
-var cacheOptions = configuration.GetSection("CacheOptions").Get<CacheOptions>();
+var cacheOptions = builder.Configuration.GetSection("CacheOptions");
 
 builder.Logging.ClearProviders();
 builder.Logging.AddJsonConsole(options =>
@@ -55,14 +51,14 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddAutoMapper(typeof(UrlProfile));
-builder.Services.Configure<EncodeOptions>(configuration.GetSection("EncodeOptions"));
-builder.Services.Configure<UrlLifespanOptions>(configuration.GetSection("UrlLifespanSettings"));
-builder.Services.Configure<CacheEntryOptions>(configuration.GetSection("CacheEntryOptions"));
+builder.Services.Configure<EncodeOptions>(builder.Configuration.GetSection("EncodeOptions"));
+builder.Services.Configure<UrlLifespanOptions>(builder.Configuration.GetSection("UrlLifespanSettings"));
+builder.Services.Configure<CacheOptions>(cacheOptions);
 builder.Services.AddMemoryCache(options =>
 {
     _ = new MemoryCacheOptions
     {
-        SizeLimit = cacheOptions.SizeLimit
+        SizeLimit = cacheOptions.Get<CacheOptions>().SizeLimit
     };
 });
 builder.Services.AddScoped<IUrlRepository, UrlRepository>();
